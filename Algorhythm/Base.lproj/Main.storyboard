@@ -21,19 +21,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8jb-1k-to8">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="1hd-Ru-N0U"/>
+                                    <constraint firstAttribute="width" constant="200" id="oV7-H2-iQE"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0B-WG-T53">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <rect key="frame" x="164" y="441" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="0bN-0D-yQA" kind="push" identifier="showPlaylistDetail" id="dOz-cX-9nw"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="l0B-WG-T53" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WTF-1g-dUu"/>
+                            <constraint firstItem="8jb-1k-to8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SCG-O5-fXP"/>
+                            <constraint firstItem="8jb-1k-to8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UgO-QU-oWX"/>
+                            <constraint firstItem="l0B-WG-T53" firstAttribute="top" secondItem="8jb-1k-to8" secondAttribute="bottom" constant="8" id="tiH-qq-d1h"/>
                             <constraint firstItem="l0B-WG-T53" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y6H-3a-0ag"/>
                         </constraints>
                     </view>
