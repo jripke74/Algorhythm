@@ -10,6 +10,6 @@
 
 @interface PlaylistMasterViewController : UIViewController
 
-
+@property (strong, nonatomic) IBOutlet UIButton *aButton;
 
 @end
