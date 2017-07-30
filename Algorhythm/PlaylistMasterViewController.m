@@ -27,11 +27,17 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqual:@"showPlaylistDetail"]) {
-        PlaylistDetailViewController *playlistDetailController = (PlaylistDetailViewController *)segue.destinationViewController;
-        playlistDetailController.playlist = [[Playlist alloc] initWithIndex:0];
+    if ([segue.identifier isEqualToString:@"showPlaylistDetail"]) {
+        UIImageView *playlistImageView = (UIImageView *)[sender view];
+        if ([self.playlistImageViews containsObject:playlistImageView]) {
+            NSUInteger index = [self.playlistImageViews indexOfObject:playlistImageView];
+            PlaylistDetailViewController *playlistDetailController = (PlaylistDetailViewController *)segue.destinationViewController;
+            playlistDetailController.playlist = [[Playlist alloc] initWithIndex:index];
+        }
+
     }
 }
+
 - (IBAction)showPlaylistDetail:(id)sender {
     [self performSegueWithIdentifier:@"showPlaylistDetail" sender:sender];
 }

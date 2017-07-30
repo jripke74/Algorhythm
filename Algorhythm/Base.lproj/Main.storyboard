@@ -26,10 +26,14 @@
                             <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8jb-1k-to8">
                                 <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="1hd-Ru-N0U"/>
                                     <constraint firstAttribute="width" constant="200" id="oV7-H2-iQE"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ARL-Tz-BA7" appends="YES" id="YDn-T3-bT2"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1764705882352941" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,20 +42,16 @@
                             <constraint firstItem="8jb-1k-to8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SCG-O5-fXP"/>
                             <constraint firstItem="8jb-1k-to8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UgO-QU-oWX"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="7uP-bL-dvE" appends="YES" id="TMa-Cg-C20"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Playlists" id="lIE-Ap-4eA"/>
                     <connections>
                         <outletCollection property="playlistImageViews" destination="8jb-1k-to8" id="LyR-mX-U0j"/>
-                        <segue destination="0bN-0D-yQA" kind="push" identifier="showPlaylistDetail" id="1GV-2H-M0i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="7uP-bL-dvE">
+                <tapGestureRecognizer id="ARL-Tz-BA7">
                     <connections>
-                        <action selector="showPlaylistDetail:" destination="BYZ-38-t0r" id="uWS-o0-hqp"/>
+                        <segue destination="0bN-0D-yQA" kind="show" identifier="showPlaylistDetail" action="showDetailViewController:sender:" id="Ks3-WC-fVb"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -157,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euC-UD-uKP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1173.5999999999999" y="33.733133433283363"/>
+            <point key="canvasLocation" x="1202" y="34"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z2o-Rd-XFx">

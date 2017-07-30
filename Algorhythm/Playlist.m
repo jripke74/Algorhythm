@@ -23,7 +23,7 @@
         _playlistIcon = [UIImage imageNamed:iconName];
         NSString *largeIconName = [playlistDictionary objectForKey:kLargeIcon];
         _playlistIconLarge = [UIImage imageNamed:largeIconName];
-        _playlistArtist = [NSArray arrayWithArray:[playlistDictionary objectForKey:kArtists]];
+        _playlistArtists = [NSArray arrayWithArray:[playlistDictionary objectForKey:kArtists]];
         NSDictionary *colorDictionary = [playlistDictionary objectForKey:kBackgroundColor];
         _backgroundColor = [self rgbColorFromDictionary:colorDictionary];
         
