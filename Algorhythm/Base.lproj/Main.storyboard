@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -101,19 +102,54 @@
                                     <constraint firstItem="d2H-kC-oGK" firstAttribute="top" secondItem="dUG-v0-E7k" secondAttribute="top" constant="10" id="vMD-Yi-and"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIo-R4-HlB">
+                                <rect key="frame" x="36" y="424" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Number 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xg-LG-a2g">
+                                <rect key="frame" x="36" y="453" width="103.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Number 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9j-oS-gxL">
+                                <rect key="frame" x="36" y="478" width="101" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Number 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Quj-3n-ISw">
+                                <rect key="frame" x="36" y="503" width="103" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1764705882" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="1Xg-LG-a2g" firstAttribute="leading" secondItem="cEU-2T-k3l" secondAttribute="leadingMargin" constant="20" id="1HP-XG-Z0V"/>
+                            <constraint firstItem="1Xg-LG-a2g" firstAttribute="top" secondItem="TIo-R4-HlB" secondAttribute="bottom" constant="8" id="2Ii-dP-fbO"/>
+                            <constraint firstItem="Quj-3n-ISw" firstAttribute="leading" secondItem="cEU-2T-k3l" secondAttribute="leadingMargin" constant="20" id="E2R-7z-aoC"/>
+                            <constraint firstItem="F9j-oS-gxL" firstAttribute="leading" secondItem="cEU-2T-k3l" secondAttribute="leadingMargin" constant="20" id="RXw-2G-LFJ"/>
                             <constraint firstItem="dUG-v0-E7k" firstAttribute="bottom" secondItem="Fxf-pS-azQ" secondAttribute="bottom" id="Rrd-Kp-ceQ"/>
+                            <constraint firstItem="TIo-R4-HlB" firstAttribute="leading" secondItem="cEU-2T-k3l" secondAttribute="leadingMargin" constant="20" id="SXB-6a-kZC"/>
+                            <constraint firstItem="Quj-3n-ISw" firstAttribute="top" secondItem="F9j-oS-gxL" secondAttribute="bottom" constant="8" id="SeT-XP-x1L"/>
                             <constraint firstItem="dUG-v0-E7k" firstAttribute="leading" secondItem="cEU-2T-k3l" secondAttribute="leading" id="YIX-DA-G1u"/>
                             <constraint firstAttribute="trailing" secondItem="dUG-v0-E7k" secondAttribute="trailing" id="Yzj-lE-Jt6"/>
                             <constraint firstItem="Fxf-pS-azQ" firstAttribute="leading" secondItem="cEU-2T-k3l" secondAttribute="leading" id="byR-Gj-rTz"/>
+                            <constraint firstItem="F9j-oS-gxL" firstAttribute="top" secondItem="1Xg-LG-a2g" secondAttribute="bottom" constant="8" id="m8i-Tf-FLG"/>
+                            <constraint firstItem="TIo-R4-HlB" firstAttribute="top" secondItem="dUG-v0-E7k" secondAttribute="bottom" constant="20" id="mAb-PR-HzY"/>
                             <constraint firstItem="Fxf-pS-azQ" firstAttribute="top" secondItem="p9k-Su-scL" secondAttribute="bottom" id="qmh-SU-ZCF"/>
                             <constraint firstAttribute="trailing" secondItem="Fxf-pS-azQ" secondAttribute="trailing" id="sSC-yf-u10"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Artists" id="D4A-bk-fMF"/>
                     <connections>
+                        <outlet property="playlistArtist0" destination="1Xg-LG-a2g" id="QCV-Zm-VbD"/>
+                        <outlet property="playlistArtist1" destination="F9j-oS-gxL" id="zsU-tO-imN"/>
+                        <outlet property="playlistArtist2" destination="Quj-3n-ISw" id="p7k-lO-5Hm"/>
                         <outlet property="playlistCoverImage" destination="Fxf-pS-azQ" id="qj1-jG-OJk"/>
                         <outlet property="playlistDescription" destination="Axo-z0-maH" id="32d-7y-ykS"/>
                         <outlet property="playlistTitle" destination="d2H-kC-oGK" id="YYh-uL-7Ra"/>
