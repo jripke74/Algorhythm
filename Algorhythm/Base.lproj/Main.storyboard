@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8jb-1k-to8">
+                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8jb-1k-to8">
                                 <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -31,29 +31,29 @@
                                     <constraint firstAttribute="width" constant="200" id="oV7-H2-iQE"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0B-WG-T53">
-                                <rect key="frame" x="164.5" y="441.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="0bN-0D-yQA" kind="push" identifier="showPlaylistDetail" id="dOz-cX-9nw"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1764705882352941" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="8jb-1k-to8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SCG-O5-fXP"/>
                             <constraint firstItem="8jb-1k-to8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UgO-QU-oWX"/>
-                            <constraint firstItem="l0B-WG-T53" firstAttribute="top" secondItem="8jb-1k-to8" secondAttribute="bottom" constant="8" id="tiH-qq-d1h"/>
-                            <constraint firstItem="l0B-WG-T53" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y6H-3a-0ag"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7uP-bL-dvE" appends="YES" id="TMa-Cg-C20"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Playlists" id="lIE-Ap-4eA"/>
                     <connections>
-                        <outlet property="aButton" destination="l0B-WG-T53" id="0tq-jo-lq9"/>
                         <outlet property="playlistImageView0" destination="8jb-1k-to8" id="SfV-Lk-Swc"/>
+                        <segue destination="0bN-0D-yQA" kind="push" identifier="showPlaylistDetail" id="1GV-2H-M0i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7uP-bL-dvE">
+                    <connections>
+                        <action selector="showPlaylistDetail:" destination="BYZ-38-t0r" id="uWS-o0-hqp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="455" y="34"/>
         </scene>
