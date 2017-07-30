@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee" translatesAutoresizingMaskIntoConstraints="NO" id="8jb-1k-to8">
-                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8jb-1k-to8">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="1hd-Ru-N0U"/>
@@ -30,14 +31,14 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0B-WG-T53">
-                                <rect key="frame" x="164" y="441" width="46" height="30"/>
+                                <rect key="frame" x="164.5" y="441.5" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="0bN-0D-yQA" kind="push" identifier="showPlaylistDetail" id="dOz-cX-9nw"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1764705882352941" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8jb-1k-to8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SCG-O5-fXP"/>
                             <constraint firstItem="8jb-1k-to8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UgO-QU-oWX"/>
@@ -48,6 +49,7 @@
                     <navigationItem key="navigationItem" title="Playlists" id="lIE-Ap-4eA"/>
                     <connections>
                         <outlet property="aButton" destination="l0B-WG-T53" id="0tq-jo-lq9"/>
+                        <outlet property="playlistImageView0" destination="8jb-1k-to8" id="SfV-Lk-Swc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -66,35 +68,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You haven't pressed the button" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJd-v2-87R">
-                                <rect key="frame" x="68" y="323" width="238" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Fxf-pS-azQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="340"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Fxf-pS-azQ" secondAttribute="height" multiplier="32:29" id="yIZ-zv-myD"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUG-v0-E7k">
+                                <rect key="frame" x="0.0" y="314" width="375" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Goes Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2H-kC-oGK">
+                                        <rect key="frame" x="20" y="10" width="118.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axo-z0-maH">
+                                        <rect key="frame" x="20" y="39" width="335" height="43"/>
+                                        <string key="text">This is a collection of my favorite songs to listen to when working out. It's got everything from fast cardio to power workout tunes. All the right fuel to get your engine going.</string>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Axo-z0-maH" secondAttribute="trailing" constant="20" id="B5o-fn-HDz"/>
+                                    <constraint firstItem="Axo-z0-maH" firstAttribute="top" secondItem="d2H-kC-oGK" secondAttribute="bottom" constant="8" id="EXf-Ts-Wi9"/>
+                                    <constraint firstAttribute="width" secondItem="dUG-v0-E7k" secondAttribute="height" multiplier="25:6" id="cWk-Xo-Kqu"/>
+                                    <constraint firstItem="d2H-kC-oGK" firstAttribute="leading" secondItem="dUG-v0-E7k" secondAttribute="leading" constant="20" id="kwa-Oc-DQ0"/>
+                                    <constraint firstItem="Axo-z0-maH" firstAttribute="leading" secondItem="dUG-v0-E7k" secondAttribute="leading" constant="20" id="lXa-mU-YGN"/>
+                                    <constraint firstItem="d2H-kC-oGK" firstAttribute="top" secondItem="dUG-v0-E7k" secondAttribute="top" constant="10" id="vMD-Yi-and"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.8276375788" green="1" blue="0.14843521539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1764705882" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="SJd-v2-87R" firstAttribute="centerX" secondItem="cEU-2T-k3l" secondAttribute="centerX" id="fec-35-xPF"/>
-                            <constraint firstItem="SJd-v2-87R" firstAttribute="centerY" secondItem="cEU-2T-k3l" secondAttribute="centerY" id="nZZ-fW-3ee"/>
+                            <constraint firstItem="dUG-v0-E7k" firstAttribute="bottom" secondItem="Fxf-pS-azQ" secondAttribute="bottom" id="Rrd-Kp-ceQ"/>
+                            <constraint firstItem="dUG-v0-E7k" firstAttribute="leading" secondItem="cEU-2T-k3l" secondAttribute="leading" id="YIX-DA-G1u"/>
+                            <constraint firstAttribute="trailing" secondItem="dUG-v0-E7k" secondAttribute="trailing" id="Yzj-lE-Jt6"/>
+                            <constraint firstItem="Fxf-pS-azQ" firstAttribute="leading" secondItem="cEU-2T-k3l" secondAttribute="leading" id="byR-Gj-rTz"/>
+                            <constraint firstItem="Fxf-pS-azQ" firstAttribute="top" secondItem="p9k-Su-scL" secondAttribute="bottom" id="qmh-SU-ZCF"/>
+                            <constraint firstAttribute="trailing" secondItem="Fxf-pS-azQ" secondAttribute="trailing" id="sSC-yf-u10"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Artists" id="D4A-bk-fMF"/>
                     <connections>
-                        <outlet property="buttonPressedLabel" destination="SJd-v2-87R" id="sTV-ch-rDu"/>
+                        <outlet property="playlistCoverImage" destination="Fxf-pS-azQ" id="qj1-jG-OJk"/>
+                        <outlet property="playlistDescription" destination="Axo-z0-maH" id="32d-7y-ykS"/>
+                        <outlet property="playlistTitle" destination="d2H-kC-oGK" id="YYh-uL-7Ra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euC-UD-uKP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="34"/>
+            <point key="canvasLocation" x="1173.5999999999999" y="33.733133433283363"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z2o-Rd-XFx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ui7-Xd-wh9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rzE-Bk-xhB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="rzE-Bk-xhB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1764705882" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -107,6 +147,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="coffee" width="53" height="107"/>
+        <image name="placeholder" width="66" height="73"/>
     </resources>
 </document>

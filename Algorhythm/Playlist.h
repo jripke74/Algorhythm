@@ -18,4 +18,6 @@
 @property (strong, nonatomic) NSArray *playlistArtist;
 @property (strong, nonatomic) UIColor *backgroundColor;
 
+- (instancetype)initWithIndex:(NSUInteger)index;
+
 @end
