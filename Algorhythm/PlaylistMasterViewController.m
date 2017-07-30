@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    for (NSUInteger index = 0; index < self.playlistImageViews.count; index++) {
+    for (NSUInteger index = 0; index < self.playlistImageViews.count - 1; index++) {
         Playlist *playlist = [[Playlist alloc] initWithIndex:index];
         UIImageView *playlistImageView = self.playlistImageViews[index];
         playlistImageView.image = playlist.playlistIcon;
