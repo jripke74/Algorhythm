@@ -22,8 +22,8 @@
 - (void)setUp {
     [super setUp];
     self.playlist = [[Playlist alloc]init];
-    self.colorDictionary = @{@"red":@255.0, @"green": @155.0, @"blue":@55.0, @"alphay": @1.0};
-    self.expectedColor = [UIColor colorWithRed:255.0/255 green:155.0/244 blue:55.0/255 alpha:1];
+    self.colorDictionary = @{@"red":@255.0, @"green": @155.0, @"blue":@55.0, @"alpha": @1.0};
+    self.expectedColor = [UIColor colorWithRed:255.0/255 green:155.0/255 blue:55.0/255 alpha:1];
 }
 
 - (void)tearDown {
@@ -45,4 +45,5 @@
     UIColor *resultColor = [self.playlist rgbColorFromDictionary: self.colorDictionary];
     XCTAssertEqualObjects(resultColor, self.expectedColor, @"resultColor does NOT equal expectedColor");
 }
+
 @end
