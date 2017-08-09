@@ -46,4 +46,10 @@
     XCTAssertEqualObjects(resultColor, self.expectedColor, @"resultColor does NOT equal expectedColor");
 }
 
+- (void)testMissingColorValue {
+    self.colorDictionary = @{@"red": @255.0, @"blue": @155.0, @"alpha":@1.0};
+    UIColor *resultColor = [self.playlist rgbColorFromDictionary:self.colorDictionary];
+    XCTAssertNotNil(resultColor, @"resultColor is NOT nil");
+}
+
 @end

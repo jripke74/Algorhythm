@@ -36,6 +36,9 @@
     CGFloat green = [[colorDictionary objectForKey:@"green"] doubleValue];
     CGFloat blue = [[colorDictionary objectForKey:@"blue"] doubleValue];
     CGFloat alpha = [[colorDictionary objectForKey:@"alpha"] doubleValue];
+    if (colorDictionary.count < 4) {
+        return [UIColor colorWithRed:155/255.0 green:155/255.0 blue:155/255.0 alpha:1];
+    }
     return [UIColor colorWithRed:red/255 green:green/255 blue:blue/255 alpha:alpha];
 }
 
